@@ -1,55 +1,212 @@
-.info-card{
-    margin-top:18px;
-    background:#ffffff;
-    border-radius:14px;
-    padding:18px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    text-align:center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.info-title{
-    font-size:15px;
-    color:#666;
-    margin-bottom:8px;
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
-.info-value{
-    font-size:34px;
-    font-weight:700;
-    color:#2c7be5;
+.container {
+    width: 100%;
+    max-width: 480px;
 }
 
-.credit-box{
-    width:90px;
-    height:44px;
-    border-radius:10px;
-    border:1px solid #ddd;
-    font-size:20px;
-    text-align:center;
-    margin-top:10px;
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.staff-card{
-    margin-top:18px;
-    background:#27ae60;
-    color:white;
-    border-radius:14px;
-    padding:22px;
-    text-align:center;
+header h1 {
+    font-size: 24px;
+    color: #2c3e50;
 }
 
-.staff-title{
-    font-size:16px;
-    opacity:.9;
+header h2 {
+    font-size: 18px;
+    color: #7f8c8d;
+    font-weight: 400;
 }
 
-.staff-value{
-    font-size:48px;
-    font-weight:bold;
-    margin-top:8px;
+.capacity {
+    margin-top: 5px;
+    font-size: 14px;
+    background: #eef2f5;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
 }
 
-.staff-unit{
-    font-size:18px;
-    margin-top:4px;
+.card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #2c7be5;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input,
+.row input,
+.summary input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    text-align: right;
+}
+
+.input-group input {
+    width: 100px;
+}
+
+.input-group input:focus,
+.row input:focus,
+.summary input:focus {
+    border-color: #2c7be5;
+}
+
+/* WORKLOAD PREVIEW TABLE */
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    font-size: 12px;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.table-header span:first-child {
+    text-align: left;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.row .task-name {
+    font-size: 13px;
+}
+
+.row input {
+    width: 100%;
+}
+
+.row input[readonly] {
+    background-color: #f8f9fa;
+    color: #666;
+}
+
+.subtotal {
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    color: #444;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 15px 0;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.summary label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.total-badge {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c7be5;
+}
+
+.credit-box {
+    width: 70px;
+    font-weight: bold;
+}
+
+/* RESULT CARD */
+.staff-card {
+    margin-top: 18px;
+    background: #27ae60;
+    color: white;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+}
+
+.staff-title {
+    font-size: 14px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.staff-value {
+    font-size: 46px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.staff-unit {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* BUTTON */
+#submitBtn {
+    width: 100%;
+    padding: 14px;
+    background-color: #2c7be5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#submitBtn:hover {
+    background-color: #1a68d1;
 }
