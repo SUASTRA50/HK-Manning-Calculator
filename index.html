@@ -1,1 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Housekeeping Manning Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>Housekeeping</h1>
+
+<h2>Manning Calculator</h2>
+
+<p>Hotel Capacity : <b>272 Rooms</b></p>
+
+</header>
+
+
+<!-- HOTEL FORECAST -->
+
+<section class="card">
+
+<h3>🏨 HOTEL FORECAST</h3>
+
+<div class="input-group">
+
+<label>Tonight Occupancy</label>
+
+<input type="number"
+id="tonightOcc"
+placeholder="0">
+
+</div>
+
+<div class="input-group">
+
+<label>Arrival</label>
+
+<input type="number"
+id="arrival"
+placeholder="0">
+
+</div>
+
+<div class="input-group">
+
+<label>Departure</label>
+
+<input type="number"
+id="departure"
+placeholder="0">
+
+</div>
+
+</section>
+
+
+
+<!-- ROOM STATUS -->
+
+<section class="card">
+
+<h3>🛏 ROOM STATUS</h3>
+
+<div class="input-group">
+
+<label>Left Over / Dropped Room</label>
+
+<input type="number"
+id="backlog"
+placeholder="0">
+
+</div>
+
+<div class="input-group">
+
+<label>Pick-up Room</label>
+
+<input type="number"
+id="pickup"
+placeholder="0">
+
+</div>
+
+</section>
+
+
+
+<!-- SPECIAL SERVICE -->
+
+<section class="card">
+
+<h3>✨ SPECIAL SERVICE</h3>
+
+<div class="input-group">
+
+<label>Turn Down</label>
+
+<input type="number"
+id="turndown"
+placeholder="0">
+
+</div>
+
+</section>
+
+
+
+<!-- WORKLOAD PREVIEW -->
+
+<section class="card">
+
+<h3>📊 WORKLOAD PREVIEW</h3>
+
+
+<div class="row">
+
+<span>Stayover</span>
+
+<input
+id="stayover"
+type="number"
+readonly>
+
+<input
+id="stayWeight"
+type="number"
+value="0.70">
+
+</div>
+
+
+<div class="row">
+
+<span>Departure</span>
+
+<input
+id="depRoom"
+type="number"
+readonly>
+
+<input
+id="depWeight"
+type="number"
+value="1.00">
+
+</div>
+
+
+
+<div class="row">
+
+<span>Backlog</span>
+
+<input
+id="backRoom"
+type="number"
+readonly>
+
+<input
+id="backWeight"
+type="number"
+value="1.00">
+
+</div>
+
+
+
+<div class="row">
+
+<span>Pick-up</span>
+
+<input
+id="pickRoom"
+type="number"
+readonly>
+
+<input
+id="pickWeight"
+type="number"
+value="0.40">
+
+</div>
+
+
+
+<div class="row">
+
+<span>Turn Down</span>
+
+<input
+id="turnRoom"
+type="number"
+readonly>
+
+<input
+id="turnWeight"
+type="number"
+value="0.20">
+
+</div>
+
+
+<hr>
+
+
+<div class="summary">
+
+<label>Total Cleaning Credit</label>
+
+<input
+id="totalCredit"
+type="number"
+readonly>
+
+</div>
+
+
+<div class="summary">
+
+<label>Cleaning Credit / RA</label>
+
+<input
+id="creditRA"
+type="number"
+value="14">
+
+</div>
+
+
+<div class="summary result">
+
+<label>Required Room Attendant</label>
+
+<input
+id="requiredRA"
+type="number"
+readonly>
+
+</div>
+
+</section>
+
+
+<button id="submitBtn">
+
+SUBMIT TO GOOGLE SHEET
+
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
