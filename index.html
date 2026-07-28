@@ -1,269 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Housekeeping Manning Calculator</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housekeeping Manning Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
-
-<header>
-
-<h1>Housekeeping</h1>
-
-<h2>Manning Calculator</h2>
-
-<p>Hotel Capacity : <b>272 Rooms</b></p>
-
-</header>
-
-
-<!-- HOTEL FORECAST -->
-
-<section class="card">
-
-<h3>🏨 HOTEL FORECAST</h3>
-
-<div class="input-group">
-
-<label>Tonight Occupancy</label>
-
-<input type="number"
-id="tonightOcc"
-placeholder="0">
-
-</div>
-
-<div class="input-group">
-
-<label>Arrival</label>
-
-<input type="number"
-id="arrival"
-placeholder="0">
-
-</div>
-
-<div class="input-group">
-
-<label>Departure</label>
-
-<input type="number"
-id="departure"
-placeholder="0">
-
-</div>
-
-</section>
-
-
-
-<!-- ROOM STATUS -->
-
-<section class="card">
-
-<h3>🛏 ROOM STATUS</h3>
-
-<div class="input-group">
-
-<label>Left Over / Dropped Room</label>
-
-<input type="number"
-id="backlog"
-placeholder="0">
-
-</div>
-
-<div class="input-group">
-
-<label>Pick-up Room</label>
-
-<input type="number"
-id="pickup"
-placeholder="0">
-
-</div>
-
-</section>
-
-
-
-<!-- SPECIAL SERVICE -->
-
-<section class="card">
-
-<h3>✨ SPECIAL SERVICE</h3>
-
-<div class="input-group">
-
-<label>Turn Down</label>
-
-<input type="number"
-id="turndown"
-placeholder="0">
-
-</div>
-
-</section>
-
-
-
-<!-- WORKLOAD PREVIEW -->
-
-<section class="card">
-
-<h3>📊 WORKLOAD PREVIEW</h3>
-
-
-<div class="row">
-
-<span>Stayover</span>
-
-<input
-id="stayover"
-type="number"
-readonly>
-
-<input
-id="stayWeight"
-type="number"
-value="0.70">
-
-</div>
-
-
-<div class="row">
-
-<span>Departure</span>
-
-<input
-id="depRoom"
-type="number"
-readonly>
-
-<input
-id="depWeight"
-type="number"
-value="1.00">
-
-</div>
-
-
-
-<div class="row">
-
-<span>Backlog</span>
-
-<input
-id="backRoom"
-type="number"
-readonly>
-
-<input
-id="backWeight"
-type="number"
-value="1.00">
-
-</div>
-
-
-
-<div class="row">
-
-<span>Pick-up</span>
-
-<input
-id="pickRoom"
-type="number"
-readonly>
-
-<input
-id="pickWeight"
-type="number"
-value="0.40">
-
-</div>
-
-
-
-<div class="row">
-
-<span>Turn Down</span>
-
-<input
-id="turnRoom"
-type="number"
-readonly>
-
-<input
-id="turnWeight"
-type="number"
-value="0.20">
-
-</div>
-
-
-<hr>
-
-
-<div class="summary">
-
-<label>Total Cleaning Credit</label>
-
-<input
-id="totalCredit"
-type="number"
-readonly>
-
-</div>
-
-
-<div class="summary">
-
-<label>Cleaning Credit / RA</label>
-
-<input
-id="creditRA"
-type="number"
-value="14">
-
-</div>
-
-
-<div class="summary result">
-
-<label>Required Room Attendant</label>
-
-<input
-id="requiredRA"
-type="number"
-readonly>
-
-</div>
-
-</section>
-
-
-<button id="submitBtn">
-
-SUBMIT TO GOOGLE SHEET
-
-</button>
-
+    <header>
+        <h1>Housekeeping</h1>
+        <h2>Manning Calculator</h2>
+        <p class="capacity">Hotel Capacity : <b>272 Rooms</b></p>
+    </header>
+
+    <!-- HOTEL FORECAST -->
+    <section class="card">
+        <h3>🏨 HOTEL FORECAST</h3>
+        <div class="input-group">
+            <label for="tonightOcc">Tonight Occupancy</label>
+            <input type="number" id="tonightOcc" placeholder="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="arrival">Arrival</label>
+            <input type="number" id="arrival" placeholder="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="departure">Departure</label>
+            <input type="number" id="departure" placeholder="0" min="0">
+        </div>
+    </section>
+
+    <!-- ROOM STATUS -->
+    <section class="card">
+        <h3>🛏 ROOM STATUS</h3>
+        <div class="input-group">
+            <label for="backlog">Left Over / Dropped Room</label>
+            <input type="number" id="backlog" placeholder="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="pickup">Pick-up Room</label>
+            <input type="number" id="pickup" placeholder="0" min="0">
+        </div>
+    </section>
+
+    <!-- SPECIAL SERVICE -->
+    <section class="card">
+        <h3>✨ SPECIAL SERVICE</h3>
+        <div class="input-group">
+            <label for="turndown">Turn Down</label>
+            <input type="number" id="turndown" placeholder="0" min="0">
+        </div>
+    </section>
+
+    <!-- WORKLOAD PREVIEW -->
+    <section class="card">
+        <h3>📊 WORKLOAD PREVIEW</h3>
+        
+        <div class="table-header">
+            <span>Task</span>
+            <span>Qty</span>
+            <span>Weight</span>
+            <span>Total</span>
+        </div>
+
+        <div class="row">
+            <span class="task-name">Stayover</span>
+            <input id="stayQty" type="number" readonly placeholder="0">
+            <input id="stayCredit" type="number" value="0.70" step="0.01">
+            <span id="stayTotal" class="subtotal">0.0</span>
+        </div>
+
+        <div class="row">
+            <span class="task-name">Departure</span>
+            <input id="depQty" type="number" readonly placeholder="0">
+            <input id="depCredit" type="number" value="1.00" step="0.01">
+            <span id="depTotal" class="subtotal">0.0</span>
+        </div>
+
+        <div class="row">
+            <span class="task-name">Backlog</span>
+            <input id="backQty" type="number" readonly placeholder="0">
+            <input id="backCredit" type="number" value="1.00" step="0.01">
+            <span id="backTotal" class="subtotal">0.0</span>
+        </div>
+
+        <div class="row">
+            <span class="task-name">Pick-up</span>
+            <input id="pickQty" type="number" readonly placeholder="0">
+            <input id="pickCredit" type="number" value="0.40" step="0.01">
+            <span id="pickTotal" class="subtotal">0.0</span>
+        </div>
+
+        <div class="row">
+            <span class="task-name">Turn Down</span>
+            <input id="turnQty" type="number" readonly placeholder="0">
+            <input id="turnCredit" type="number" value="0.20" step="0.01">
+            <span id="turnTotal" class="subtotal">0.0</span>
+        </div>
+
+        <hr>
+
+        <div class="summary">
+            <label>Total Cleaning Credit</label>
+            <span id="totalCleaning" class="total-badge">0.0</span>
+        </div>
+
+        <div class="summary">
+            <label for="creditRA">Cleaning Credit / RA</label>
+            <input id="creditRA" type="number" value="14" class="credit-box">
+        </div>
+
+        <!-- Highlight Result Card -->
+        <div class="staff-card">
+            <div class="staff-title">Required Room Attendant</div>
+            <div class="staff-value">
+                <span id="requiredRA">0</span>
+            </div>
+            <div class="staff-unit">Attendants</div>
+        </div>
+    </section>
+
+    <button id="submitBtn">SUBMIT TO GOOGLE SHEET</button>
 </div>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
