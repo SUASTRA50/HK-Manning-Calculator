@@ -1,0 +1,55 @@
+.info-card{
+    margin-top:18px;
+    background:#ffffff;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.info-title{
+    font-size:15px;
+    color:#666;
+    margin-bottom:8px;
+}
+
+.info-value{
+    font-size:34px;
+    font-weight:700;
+    color:#2c7be5;
+}
+
+.credit-box{
+    width:90px;
+    height:44px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:20px;
+    text-align:center;
+    margin-top:10px;
+}
+
+.staff-card{
+    margin-top:18px;
+    background:#27ae60;
+    color:white;
+    border-radius:14px;
+    padding:22px;
+    text-align:center;
+}
+
+.staff-title{
+    font-size:16px;
+    opacity:.9;
+}
+
+.staff-value{
+    font-size:48px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.staff-unit{
+    font-size:18px;
+    margin-top:4px;
+}
